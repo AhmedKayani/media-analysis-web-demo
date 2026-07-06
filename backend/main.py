@@ -25,3 +25,5 @@ async def analyze_image(file: UploadFile = File(...)):
         "file_size_kb": round(len(content) / 1024, 2),
         "message": "Image received successfully"
     }
+
+
