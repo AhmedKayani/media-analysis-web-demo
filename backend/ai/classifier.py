@@ -24,6 +24,6 @@ def classify_image(image_path: str) -> dict:
     confidence = float(decoded_predictions[2])
 
     return {
-        "class": decoded_predictions[1],
-        "probability": float(decoded_predictions[2])
+        "prediction": label,
+        "confidence": round(confidence * 100, 2)
     }
