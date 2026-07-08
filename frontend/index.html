@@ -23,7 +23,7 @@
         <p id="status"></p>
       </section>
 
-      <section class="card">
+      <section class="card hidden">
         <input type="file" id="audioInput" accept="audio/*" />
         <p id="statusText"></p>
         <button id="AudioAnalyzebtn">Analyze Audio</button>
@@ -37,6 +37,10 @@
         <p><strong>Size:</strong> <span id="fileSize"></span> KB</p>
         <p><strong>Prediction:</strong> <span id="prediction"></span></p>
         <p><strong>Confidence:</strong> <span id="confidence"></span>%</p>
+
+        <div class="confidence-bar">
+          <div id="confidenceFill" class="confidence-fill"></div>
+        </div>
         <p class="privacy"><span id="message"></span></p>
       </section>
     </main>

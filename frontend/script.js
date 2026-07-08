@@ -1,3 +1,4 @@
+const confidenceFill = document.getElementById("confidenceFill")
 const previewContainer = document.getElementById("previewContainer")
 const imagePreview = document.getElementById("imagePreview")
 const imageInput = document.getElementById("imageInput")
@@ -28,6 +29,7 @@ imageInput.addEventListener("change", () => {
 
 ImgAnalyzebtn.addEventListener("click", async () => {
   const file = imageInput.files[0]
+  confidenceFill.style.width = "0%"
 
   if (!file) {
     statusText.textContent = "Please select an image file."
@@ -58,6 +60,7 @@ ImgAnalyzebtn.addEventListener("click", async () => {
     document.getElementById("fileSize").textContent = data.file_size_kb
     document.getElementById("prediction").textContent = data.prediction
     document.getElementById("confidence").textContent = data.confidence
+    confidenceFill.style.width = `${data.confidence}%`
     document.getElementById("message").textContent = data.message
     statusText.textContent = "Analysis complete."
 
