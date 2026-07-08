@@ -1,9 +1,32 @@
+const previewContainer = document.getElementById("previewContainer")
+const imagePreview = document.getElementById("imagePreview")
 const imageInput = document.getElementById("imageInput")
-const analyzebtn = document.getElementById("analyzeBtn")
+const ImgAnalyzebtn = document.getElementById("ImgAnalyzebtn")
+const audioInput = document.getElementById("audioInput")
+const AudioAnalyzebtn = document.getElementById("AudioAnalyzebtn")
 const statusText = document.getElementById("statusText")
 const resultCard = document.getElementById("resultCard")
 
-analyzebtn.addEventListener("click", async () => {
+AudioAnalyzebtn.addEventListener("click", async () => {
+  const file = audioInput.files[0]
+})
+
+imageInput.addEventListener("change", () => {
+  const file = imageInput.files[0]
+
+  if (!file) {
+    previewContainer.classList.add("hidden")
+    imagePreview.src = ""
+    return
+  }
+
+  imagePreview.src = URL.createObjectURL(file)
+  previewContainer.classList.remove("hidden")
+  statusText.textContent = ""
+  resultCard.classList.add("hidden")
+})
+
+ImgAnalyzebtn.addEventListener("click", async () => {
   const file = imageInput.files[0]
 
   if (!file) {

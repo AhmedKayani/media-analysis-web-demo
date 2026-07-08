@@ -14,8 +14,19 @@
 
       <section class="card">
         <input type="file" id="imageInput" accept="image/*" />
+        <div id="previewContainer" class="preview hidden">
+          <p><strong>Selected image:</strong></p>
+          <img id="imagePreview" alt="Uploaded image preview" />
+        </div>
         <p id="statusText"></p>
-        <button id="analyzeBtn">Analyze Image</button>
+        <button id="ImgAnalyzebtn">Analyze Image</button>
+        <p id="status"></p>
+      </section>
+
+      <section class="card">
+        <input type="file" id="audioInput" accept="audio/*" />
+        <p id="statusText"></p>
+        <button id="AudioAnalyzebtn">Analyze Audio</button>
         <p id="status"></p>
       </section>
 
