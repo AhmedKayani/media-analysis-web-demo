@@ -22,6 +22,7 @@ app.add_middleware(
 def root():
     return {"message": "Welcome to the Media Analysis Web Demo API!"}
 
+
 @app.post("/analyze-image")
 async def analyze_image(file: UploadFile = File(...)):
     if not file.content_type.startswith("image/"):

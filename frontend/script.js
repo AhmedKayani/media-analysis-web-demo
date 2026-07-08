@@ -12,9 +12,9 @@ analyzebtn.addEventListener("click", async () => {
   }
 
   const formData = new FormData()
-  formData.append("image", file)
+  formData.append("file", file)
 
-  statusText.textContent = "Analyzing image..."
+  statusText.textContent = "Analyzing image"
   resultCard.classList.add("hidden")
 
   try {
@@ -26,22 +26,16 @@ analyzebtn.addEventListener("click", async () => {
     const data = await response.json()
 
     if (!response.ok) {
-      statusText.textContent = data.detail || "Error analyzing image."
+      statusText.textContent = "Error analyzing image."
       return
     }
 
     document.getElementById("filename").textContent = data.filename
-
     document.getElementById("contentType").textContent = data.content_type
-
     document.getElementById("fileSize").textContent = data.file_size_kb
-
     document.getElementById("prediction").textContent = data.prediction
-
     document.getElementById("confidence").textContent = data.confidence
-
     document.getElementById("message").textContent = data.message
-
     statusText.textContent = "Analysis complete."
 
     resultCard.classList.remove("hidden")
