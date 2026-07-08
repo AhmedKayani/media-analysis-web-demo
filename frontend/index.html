@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AI Media Analysis Web Demo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>AI Media Analysis Web Demonstrator</h1>
+
+      <p class="subtitle">
+        Upload an image to analyze it using a TensorFlow model.
+      </p>
+
+      <section class="card">
+        <input type="file" id="imageInput" accept="image/*" />
+
+        <button id="analyzeBtn">Analyze Image</button>
+
+        <p id="status"></p>
+      </section>
+
+      <section id="resultCard" class="card hidden">
+        <h2>Analysis Result</h2>
+
+        <p><strong>Filename:</strong> <span id="filename"></span></p>
+
+        <p><strong>Type:</strong> <span id="contentType"></span></p>
+
+        <p><strong>Size:</strong> <span id="fileSize"></span> KB</p>
+
+        <p><strong>Prediction:</strong> <span id="prediction"></span></p>
+
+        <p><strong>Confidence:</strong> <span id="confidence"></span>%</p>
+
+        <p class="privacy"><span id="message"></span></p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
